@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.l-article {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+    'title title title title title title'
+    'meta  meta  meta  meta  meta  meta'
+    'copy1 copy1 copy1 copy1 copy1 copy1'
+    'copy2 copy2 copy2 copy2 copy2 copy2'
+    'media media media media media media'
+    'aside aside aside aside aside aside';
+
+    margin: 0 auto;
+    max-width: 1024px;
+
+    @media (min-width: 30rem) {
+        grid-template-areas: 
+        'meta meta title title title title'
+        'copy1 copy1 copy1 copy1 copy1 copy1'
+        'copy2 copy2 copy2 copy2 copy2 copy2'
+        'media media media media media aside';
+    }
+
+    @media (min-width: 60rem) {
+        grid-template-areas: 
+        'meta  title title title copy2 copy2'
+        'copy1 copy1 copy1 copy1 copy2 copy2'
+        'copy1 copy1 copy1 copy1 copy2 copy2'
+        'media media media media media media'
+        'aside aside .     .     .     .    ';
+    }
+}
+
+.l-article > * {
+    min-height: 100px;
+    padding: 1rem;
+}
+
+.l-article__title {
+    grid-area: title;
+    background-color: darkgray;
+}
+.l-article__meta {
+    grid-area: meta;
+    background-color: lightblue;
+}
+.l-article__copy1 {
+    grid-area: copy1;
+    background-color: darkolivegreen;
+}
+.l-article__copy2 {
+    grid-area: copy2;
+    background-color: lightpink;
+}
+.l-article__media {
+    grid-area: media;
+    margin: 0;
+    background-color: darkorange;
+}
+.l-article__aside {
+    grid-area: aside;
+    background-color: lightgreen;
+}

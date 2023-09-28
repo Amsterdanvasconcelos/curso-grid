@@ -1,0 +1,21 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+    justify-items: center;
+    align-items: center;
+}
+
+.wrapper div {
+    background-color: darkgoldenrod;
+    padding: 1rem;
+}
+
+.wrapper div:nth-child(even) {
+    background-color: lightsalmon;
+}
+
+.wrapper div:nth-child(2n+1) {
+    align-self: self-start;
+    justify-self: self-start;
+}

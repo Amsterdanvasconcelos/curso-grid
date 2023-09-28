@@ -1,0 +1,37 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: [pizza] repeat(5, 1fr) [sorvete] ;
+    grid-auto-rows: minmax(200px, auto);
+    gap: 1rem;
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    grid-column: pizza / sorvete;
+}
+main {
+    grid-column: pizza / span 3;
+    grid-row: span 2;
+}
+aside {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+footer {
+    grid-column: pizza / sorvete;
+
+}
+
+.wrapper * {
+    border: 1px solid rgb(22, 22, 22);
+    background-color: darkolivegreen;
+    padding: 1rem;
+}
+
+.wrapper *:nth-child(even) {
+    border: 1px solid rgb(22, 22, 22);
+    background-color: lightskyblue;
+    color: rgb(18, 17, 17);
+}
